@@ -52,9 +52,6 @@ public class ProductManageController {
             return ServerResponse.buildErrorByCode(ResponseCode.NEED_LOGIN.getCode(), "请先登录管理员账户");
         }
         if (iUserService.checkAdminRole(user).isSuccess()) {
-            /**
-             * 填充增加Product的业务逻辑
-             */
             return iProductService.saveOrUpdateProduct(product);
         } else {
             return ServerResponse.buildErrorByMsg("无权限操作");
@@ -78,9 +75,6 @@ public class ProductManageController {
             return ServerResponse.buildErrorByCode(ResponseCode.NEED_LOGIN.getCode(), "请先登录管理员账户");
         }
         if (iUserService.checkAdminRole(user).isSuccess()) {
-            /**
-             * 填充修改Product状态的业务逻辑
-             */
             return iProductService.setProductStatus(productId, status);
         } else {
             return ServerResponse.buildErrorByMsg("无权限操作");
@@ -102,9 +96,6 @@ public class ProductManageController {
             return ServerResponse.buildErrorByCode(ResponseCode.NEED_LOGIN.getCode(), "请先登录管理员账户");
         }
         if (iUserService.checkAdminRole(user).isSuccess()) {
-            /**
-             * 填充修改Product状态的业务逻辑
-             */
             return iProductService.manageProductDetail(productId);
         } else {
             return ServerResponse.buildErrorByMsg("无权限操作");
@@ -144,13 +135,9 @@ public class ProductManageController {
     }
 
     @RequestMapping(value = "upload.do", method = RequestMethod.POST)
-    public ServerResponse upload(HttpSession session,
-                                 @RequestParam(value = "upload_file", required = false) MultipartFile multipartFile,
-                                 HttpServletRequest request) {
-        /**
-         * 相当于在web目录下（和WEB-INF平级）创建了一个upload文件夹，但是该upload文件夹的创建不应该依赖
-         * 业务逻辑，应该自己编写创建逻辑
-         */
+    public ServerResponse upload(HttpSession session, HttpServletRequest request,
+                                 @RequestParam(value = "upload_file", required = false) MultipartFile multipartFile) {
+        // 相当于在web目录下（和WEB-INF平级）创建了一个upload文件夹，但是该upload文件夹的创建不应该依赖业务逻辑
         User user = (User) session.getAttribute(Const.CURRENT_USER);
         if (user == null) {
             return ServerResponse.buildErrorByCode(ResponseCode.NEED_LOGIN.getCode(), "请先登录管理员账户");
@@ -169,15 +156,8 @@ public class ProductManageController {
     }
 
     @RequestMapping(value = "richtext_upload.do", method = RequestMethod.POST)
-    public Map<String, Object> richtextUpload(HttpSession session,
-                                              @RequestParam(value = "upload_file", required = false) MultipartFile multipartFile,
-                                              HttpServletRequest request, HttpServletResponse response) {
-//富文本中对于返回值有自己的要求,我们使用是simditor所以按照simditor的要求进行返回
-//        {
-//            "success": true/false,
-//            "msg": "error message", # optional
-//            "file_path": "[real file path]"
-//        }
+    public Map<String, Object> richtextUpload(HttpSession session, HttpServletRequest request, HttpServletResponse response,
+                                              @RequestParam(value = "upload_file", required = false) MultipartFile multipartFile) {
         Map<String, Object> resultMap = new HashMap<>();
         User user = (User) session.getAttribute(Const.CURRENT_USER);
         if (user == null) {
