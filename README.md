@@ -41,6 +41,7 @@
 - Postman所有测试接口导出json文件： [tlmall.postman_collection.json](https://github.com/tanglei302wqy/tlmall-springboot/blob/master/参考文件/tlmall.postman_collection.json)
 
 **接口文档**
+
 所有接口均使用Postman测试通过，具体 [接口测试文档地址](https://github.com/tanglei302wqy/tlmall-springboot/tree/master/接口文档)
 
 ### 项目总结
@@ -63,9 +64,7 @@ vsftpd服务器搭建过程参考文章：https://blog.51cto.com/andyxu/2168875
 首先需要购买一个域名并且备案，阿里云上购买即可。将项目打包部署到阿里云服务器上时，需要使用nginx将备案域名映射到本地云本地服务器ip上。
 同时，前端获取vsftpd上的图片的地址，也需要使用nginx进行本地目录转发，转发的阿里云服务器本地磁盘上。
 
-在nginx安装目录的conf下新建一个vhost目录，并且在默认的配置文件nginx.conf中加入：include vhost/*.conf，在vhost目录下创建两个文件：
-- image.sherman.fun.conf
-- www.sherman.fun.conf
+在nginx安装目录的conf下新建一个vhost目录，并且在默认的配置文件nginx.conf中加入：include vhost/*.conf，在vhost目录下创建两个配置文件：
 
 域名映射参考配置文件: [www.sherman.fun.conf](https://github.com/tanglei302wqy/tlmall-springboot/blob/master/参考文件/www.sherman.fun.conf)
 
