@@ -1,0 +1,1602 @@
+{
+	"info": {
+		"_postman_id": "d990d7dd-923a-49d6-a5aa-d2032795ddb5",
+		"name": "tlmall",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "login.do",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "sherman",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Conclusion:2571",
+									"type": "text"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/user/login.do",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"login.do"
+							]
+						},
+						"description": "用户登录"
+					},
+					"response": []
+				},
+				{
+					"name": "register.do",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"username\": \"fa\",\n\t\"password\": \"Conclusion2571!\",\n\t\"email\": \"gantlei@mail.sherman.fun\",\n\t\"phone\": \"12345677644\",\n\t\"question\": \"ping\",\n\t\"answer\": \"pong\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/user/register.do",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"register.do"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "check_valid.do",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "str",
+									"value": "12345677653",
+									"type": "text"
+								},
+								{
+									"key": "type",
+									"value": "phone",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/user/check_valid.do",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"check_valid.do"
+							]
+						},
+						"description": "检查用户名、邮箱、手机号码是否存在"
+					},
+					"response": []
+				},
+				{
+					"name": "get_user_info.do",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/user/get_user_info.do",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"get_user_info.do"
+							]
+						},
+						"description": "获取用户信息"
+					},
+					"response": []
+				},
+				{
+					"name": "forget_get_question.do",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "http://localhost:8080/user/forget_get_question.do?username=sherman",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"forget_get_question.do"
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": "sherman"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "forget_check_question.do",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "sherman",
+									"type": "text"
+								},
+								{
+									"key": "question",
+									"value": "hello",
+									"type": "text"
+								},
+								{
+									"key": "answer",
+									"value": "world",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/user/forget_check_question.do",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"forget_check_question.do"
+							]
+						},
+						"description": "忘记密码：检查密码是否正确"
+					},
+					"response": []
+				},
+				{
+					"name": "forget_reset_password.do",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "sherman",
+									"type": "text"
+								},
+								{
+									"key": "newPassword",
+									"value": "Conclusion:1234",
+									"type": "text"
+								},
+								{
+									"key": "forgetToken",
+									"value": "d6635ba9-f8be-14cfb-bea1-2ca0f26780ca",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/user/forget_reset_password.do",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"forget_reset_password.do"
+							]
+						},
+						"description": "忘记密码：重置密码\n注意传递参数：forgetToken，在forget_get_question.do的返回值中获取"
+					},
+					"response": []
+				},
+				{
+					"name": "reset_password_when_login.do",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "oldPassword",
+									"value": "Conclusion:12324",
+									"type": "text"
+								},
+								{
+									"key": "newPassword",
+									"value": "Conclusion:2571",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/user/reset_password_when_login.do",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"reset_password_when_login.do"
+							]
+						},
+						"description": "登录状态修改密码"
+					},
+					"response": []
+				},
+				{
+					"name": "update_information.do",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\": \"sherman2571@sherman.fun\",\n\t\"phone\": 12345677654,\n\t\"question\": \"ping\",\n\t\"answer\": \"pong\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/user/update_information.do",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"update_information.do"
+							]
+						},
+						"description": "登录状态更新用户信息"
+					},
+					"response": []
+				},
+				{
+					"name": "logout.do",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/user/logout.do",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"logout.do"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get_information.do",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/user/get_information.do",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"get_information.do"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "manage",
+			"item": [
+				{
+					"name": "category",
+					"item": [
+						{
+							"name": "get_category.do",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/manage/category/get_child_category.do?category_id=3",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"manage",
+										"category",
+										"get_child_category.do"
+									],
+									"query": [
+										{
+											"key": "category_id",
+											"value": "3"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get_all_category.do",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/manage/category/get_all_category.do?category_id=5",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"manage",
+										"category",
+										"get_all_category.do"
+									],
+									"query": [
+										{
+											"key": "category_id",
+											"value": "5"
+										}
+									]
+								},
+								"description": "获取给定category id所有子类的category id"
+							},
+							"response": []
+						},
+						{
+							"name": "add_category.do",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/manage/category/add_category.do?category_name=奶酒&parent_id=5",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"manage",
+										"category",
+										"add_category.do"
+									],
+									"query": [
+										{
+											"key": "category_name",
+											"value": "奶酒"
+										},
+										{
+											"key": "parent_id",
+											"value": "5"
+										}
+									]
+								},
+								"description": "增加一个分类"
+							},
+							"response": []
+						},
+						{
+							"name": "set_category_name",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/manage/category/set_category_name.do?category_id=33&category_name=奶酒-1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"manage",
+										"category",
+										"set_category_name.do"
+									],
+									"query": [
+										{
+											"key": "category_id",
+											"value": "33"
+										},
+										{
+											"key": "category_name",
+											"value": "奶酒-1"
+										}
+									]
+								},
+								"description": "修改分类名称\n"
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "product",
+					"item": [
+						{
+							"name": "save_product.do",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"id\": 7,\n    \"categoryId\": \"12\",\n    \"name\": \"iphone8-修改\",\n    \"subtitle\": \"苹果8-修改\",\n    \"subImages\": \"iphone8.png,iphone8_sub_1.png,iphoine8_sub_2.png\",\n    \"price\": \"4999.0\",\n    \"status\": \"1\",\n    \"stock\": \"100\"\n}"
+								},
+								"url": {
+									"raw": "http://localhost:8080/manage/product/save_product.do",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"manage",
+										"product",
+										"save_product.do"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "set_product_status.do",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/manage/product/set_product_status.do?product_id=10&status=2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"manage",
+										"product",
+										"set_product_status.do"
+									],
+									"query": [
+										{
+											"key": "product_id",
+											"value": "10"
+										},
+										{
+											"key": "status",
+											"value": "2"
+										}
+									]
+								},
+								"description": "修改product状态"
+							},
+							"response": []
+						},
+						{
+							"name": "details.do",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/manage/product/details.do?product_id=1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"manage",
+										"product",
+										"details.do"
+									],
+									"query": [
+										{
+											"key": "product_id",
+											"value": "1"
+										}
+									]
+								},
+								"description": "获取产品详情"
+							},
+							"response": []
+						},
+						{
+							"name": "list.do",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/manage/product/list.do",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"manage",
+										"product",
+										"list.do"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "search.do(product_name)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/manage/product/search.do?product_name=iphone4s",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"manage",
+										"product",
+										"search.do"
+									],
+									"query": [
+										{
+											"key": "product_name",
+											"value": "iphone4s"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "search.do(product_id)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/manage/product/search.do?product_id=1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"manage",
+										"product",
+										"search.do"
+									],
+									"query": [
+										{
+											"key": "product_id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "search(product_name&product_id)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/manage/product/search.do?product_name=iphone4s&product_id=10",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"manage",
+										"product",
+										"search.do"
+									],
+									"query": [
+										{
+											"key": "product_name",
+											"value": "iphone4s"
+										},
+										{
+											"key": "product_id",
+											"value": "10"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "upload.do",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "multipart/form-data",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "upload_file",
+											"type": "file",
+											"src": "/C:/Users/TL/Downloads/iphone4s.jpg"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/manage/product/upload.do",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"manage",
+										"product",
+										"upload.do"
+									]
+								},
+								"description": "上传普通文件"
+							},
+							"response": []
+						},
+						{
+							"name": "richtext_upload.do",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "multipart/form-data",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "upload_file",
+											"type": "file",
+											"src": "/C:/Users/TL/Downloads/V2.pdf"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/manage/product/richtext_upload.do",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"manage",
+										"product",
+										"richtext_upload.do"
+									]
+								},
+								"description": "富文本文件上传"
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "order",
+					"item": [
+						{
+							"name": "list.do",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/manage/order/list.do",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"manage",
+										"order",
+										"list.do"
+									]
+								},
+								"description": "后台显示所有订单接口"
+							},
+							"response": []
+						},
+						{
+							"name": "details.do",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/manage/order/details.do?order_no=1580484591234",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"manage",
+										"order",
+										"details.do"
+									],
+									"query": [
+										{
+											"key": "order_no",
+											"value": "1580484591234"
+										}
+									]
+								},
+								"description": "根据订单号查询订单详情"
+							},
+							"response": []
+						},
+						{
+							"name": "search.do",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/manage/order/search.do?order_no=158073681151",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"manage",
+										"order",
+										"search.do"
+									],
+									"query": [
+										{
+											"key": "order_no",
+											"value": "158073681151"
+										}
+									]
+								},
+								"description": "按照订单号进行查询订单"
+							},
+							"response": []
+						},
+						{
+							"name": "send_goods",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/manage/order/send_goods.do?order_no=1580490191091",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"manage",
+										"order",
+										"send_goods.do"
+									],
+									"query": [
+										{
+											"key": "order_no",
+											"value": "1580490191091"
+										}
+									]
+								},
+								"description": "对已支付的订单进行发货"
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "user",
+					"item": [
+						{
+							"name": "login.do",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/x-www-form-urlencoded",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "username",
+											"value": "tanglei",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "Conclusion2571",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/manage/user/login.do",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"manage",
+										"user",
+										"login.do"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "product",
+			"item": [
+				{
+					"name": "list.do",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/product/list.do?keyword=iphone&category_id=12",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"product",
+								"list.do"
+							],
+							"query": [
+								{
+									"key": "keyword",
+									"value": "iphone"
+								},
+								{
+									"key": "category_id",
+									"value": "12"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "detail.do",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/product/detail.do?product_id=6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"product",
+								"detail.do"
+							],
+							"query": [
+								{
+									"key": "product_id",
+									"value": "6"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "cart",
+			"item": [
+				{
+					"name": "add.do",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/cart/add.do?product_id=2&count=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cart",
+								"add.do"
+							],
+							"query": [
+								{
+									"key": "product_id",
+									"value": "2"
+								},
+								{
+									"key": "count",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update.do",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/cart/update.do?product_id=2&count=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cart",
+								"update.do"
+							],
+							"query": [
+								{
+									"key": "product_id",
+									"value": "2"
+								},
+								{
+									"key": "count",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete.do",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/cart/delete.do?product_ids=1,2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cart",
+								"delete.do"
+							],
+							"query": [
+								{
+									"key": "product_ids",
+									"value": "1,2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list.do",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/cart/list.do",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cart",
+								"list.do"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "select_all.do",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/cart/select_all.do",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cart",
+								"select_all.do"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "un_select_all.do",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/cart/un_select_all.do",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cart",
+								"un_select_all.do"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "select.do",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/cart/select.do?product_id=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cart",
+								"select.do"
+							],
+							"query": [
+								{
+									"key": "product_id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "un_select.do",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/cart/un_select.do?product_id=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cart",
+								"un_select.do"
+							],
+							"query": [
+								{
+									"key": "product_id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get_cart_product_count.do",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/cart/get_cart_product_count.do",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cart",
+								"get_cart_product_count.do"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "shipping",
+			"item": [
+				{
+					"name": "add.do",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"receiverName1\": \"sherman\",\n\t\"receiverPhone\": \"15061884320\",\n\t\"receiverMobile\": \"15061884320\",\n\t\"receiverProvince\": \"江苏省\",\n\t\"receiverCity\": \"无锡市\",\n\t\"receiverDistrict\": \"滨湖区\",\n\t\"receiverAddress\": \"江南大学\",\n\t\"receiverZip\": \"000000\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/shipping/add.do",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"shipping",
+								"add.do"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete.do",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/shipping/delete.do?shipping_id=8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"shipping",
+								"delete.do"
+							],
+							"query": [
+								{
+									"key": "shipping_id",
+									"value": "8"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update.do",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\": 1,\n\t\"receiverName\": \"tl\",\n\t\"receiverMobile\": \"15061889055\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/shipping/update.do",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"shipping",
+								"update.do"
+							]
+						},
+						"description": "Shipping中必须提供id"
+					},
+					"response": []
+				},
+				{
+					"name": "select.do",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/shipping/select.do?shipping_id=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"shipping",
+								"select.do"
+							],
+							"query": [
+								{
+									"key": "shipping_id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list.do",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/shipping/list.do",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"shipping",
+								"list.do"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "order",
+			"item": [
+				{
+					"name": "create.do",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/order/create.do?shipping_id=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"order",
+								"create.do"
+							],
+							"query": [
+								{
+									"key": "shipping_id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cancel.do",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/order/cancel.do?order_no=1580736811517",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"order",
+								"cancel.do"
+							],
+							"query": [
+								{
+									"key": "order_no",
+									"value": "1580736811517"
+								}
+							]
+						},
+						"description": "取消未支付的订单"
+					},
+					"response": []
+				},
+				{
+					"name": "get_order_cart_product.do",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/order/get_order_cart_product.do",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"order",
+								"get_order_cart_product.do"
+							]
+						},
+						"description": "查询购物车中勾选的物品"
+					},
+					"response": []
+				},
+				{
+					"name": "details.do",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/order/details.do?order_no=1580484351716",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"order",
+								"details.do"
+							],
+							"query": [
+								{
+									"key": "order_no",
+									"value": "1580484351716"
+								}
+							]
+						},
+						"description": "查询订单详情"
+					},
+					"response": []
+				},
+				{
+					"name": "list.do",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/order/list.do",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"order",
+								"list.do"
+							]
+						},
+						"description": "订单列表页"
+					},
+					"response": []
+				},
+				{
+					"name": "pay.do",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/order/pay.do?order_no=1580484591234",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"order",
+								"pay.do"
+							],
+							"query": [
+								{
+									"key": "order_no",
+									"value": "1580484591234"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "query_order_pay_status.do",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/order/query_order_pay_status.do?order_no=1580490191091",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"order",
+								"query_order_pay_status.do"
+							],
+							"query": [
+								{
+									"key": "order_no",
+									"value": "1580490191091"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
